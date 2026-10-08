@@ -44,11 +44,14 @@ TagManager:
   - name: Ground
     uniqueID: 655006159
     locked: 0
+  - name: Collision
+    uniqueID: 323976533
+    locked: 0
   - name: WalkInfront
     uniqueID: 443133261
     locked: 0
-  - name: Collision
-    uniqueID: 323976533
+  - name: Decor
+    uniqueID: 2492119767
     locked: 0
   - name: Player
     uniqueID: 2352973531
