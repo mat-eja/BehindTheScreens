@@ -1,29 +1,29 @@
-using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+    
+using UnityEngine;
+using UnityEngine.InputSystem;
+
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
 
     private Rigidbody2D rb;
-    private Vector2 movementInput;
+    private Vector2 moveInput;
 
-    private void Awake()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        movementInput = new Vector2(moveX, moveY).normalized;
+        rb.linearVelocity = moveInput * moveSpeed;
     }
 
-    private void FixedUpdate()
+    public void Move(InputAction.CallbackContext context)
     {
-        rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
+        moveInput = context.ReadValue<Vector2>();
     }
+
+
 }
