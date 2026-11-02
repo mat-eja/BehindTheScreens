@@ -7,6 +7,6 @@ public class Level1StartDialogue : MonoBehaviour
 
   void Start()
   {
-    //dialogueManager.StartDialogue(introDialogue);
+    dialogueManager.StartDialogue(dialogueAsset);
   }
 }
