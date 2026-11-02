@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfe88ea1446f639428eb628f6eae278e, type: 3}
-  m_Name: introDialogue
+  m_Name: Level1IntroDialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
   lines:
   - speaker: 
     text: You've been transported to a Data Centre!
   - speaker: 
     text: Manage the different parts of the Data Centre to keep it running!
+  - speaker: 
+    text: 'Press E to interact with the server racks and make sure the timer doesn''t
+      run out on the switch in the bottom left corner! '
