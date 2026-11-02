@@ -24,6 +24,7 @@ public abstract class Minigame: MonoBehaviour
     {
         onCompleted?.Invoke();
         Close();
+        
     }
 protected abstract void ResetGame();
 }

@@ -22,6 +22,8 @@ public class TimerMinigame : Minigame
     [Header("Timing")]
     [Tooltip("Seconds for a full box to run completely down.")]
     [SerializeField] float secondsToDrain = 20f;
+    [Tooltip("Drain time when easy mode is on")]
+    [SerializeField] float easySecondsToDrain = 30f;
     [Tooltip("Seconds of winding to go from empty to full.")]
     [SerializeField] float secondsToFill = 4f;
     [Range(0f, 1f)]
@@ -32,6 +34,10 @@ public class TimerMinigame : Minigame
     [Header("Warning")]
     [Range(0f, 1f)]
     [SerializeField] float lowThreshold = 0.25f;
+    
+    [Header("Progress")]
+    [Tooltip("Progress lost while the progress bar is empty")]
+    [SerializeField] float penaltyProgressPerSecond = 0.05f;
  
     [Header("Events")]
     [Tooltip("Fires when the charge drops to the warning level")]
@@ -61,9 +67,8 @@ public class TimerMinigame : Minigame
 
     void Update()
     {
-        if (IsEmpty) return;
-
         elapsed += Time.deltaTime;
+        
         bool keyHeld = Input.GetKey(windKey);
         bool buttonHeld = windButton != null && windButton.IsHeld;
 
@@ -73,6 +78,8 @@ public class TimerMinigame : Minigame
         }
         else
         {
+            bool easy = LevelManager.Instance != null && LevelManager.Instance.IsEasyMode;
+            float drainTime = easy ? easySecondsToDrain : secondsToDrain;
             float drainPerSecond = (1f/ secondsToDrain) * (1f + speedUpPerMinute * elapsed / 60f);
             Charge -= drainPerSecond * Time.deltaTime;
         }
@@ -86,14 +93,16 @@ public class TimerMinigame : Minigame
         } else if (lowFired && Charge > lowThreshold) {
             lowFired = false; // rearm
         }
+        
+        bool wasEmpty = IsEmpty;
+        IsEmpty = Charge <= 0f;
 
-        if (chargeBar != null) chargeBar.value = Charge;
+        if (IsEmpty && !wasEmpty) onEmpty?.Invoke();
+        
+        if (IsEmpty && LevelManager.Instance != null) 
+            LevelManager.Instance.AddProgress(-penaltyProgressPerSecond * Time.deltaTime); 
+        if (chargeBar !=  null) chargeBar.value = Charge;
 
-        if (Charge <= 0f)
-        {
-            IsEmpty = true;
-            onEmpty?.Invoke();
-        }
     }
 
 
@@ -115,7 +124,7 @@ public class TimerMinigame : Minigame
     public override void Close()
     {
         panelOpen = false;
-        if(panelOpen != null)panel.SetActive(false);
+        if(panel != null)panel.SetActive(false);
         onClosed?.Invoke();
     }
     
