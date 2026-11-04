@@ -20,3 +20,6 @@ MonoBehaviour:
   - speaker: 
     text: 'Press E to interact with the server racks and make sure the water doesn''t
       run out on the pump in the bottom left corner! '
+  - speaker: 
+    text: 'If you struggle with maintaining the data centre, click the AI Helper
+      on the top right to make the tasks easier! '

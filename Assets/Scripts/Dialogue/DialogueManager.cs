@@ -14,14 +14,17 @@ public class DialogueManager : MonoBehaviour
     int index;
     Coroutine typing;
     bool isTyping;
+    System.Action onFinished;
 
     public bool IsOpen => panel.activeSelf;
 
-    public void StartDialogue(DialogueAsset asset)
+    public void StartDialogue(DialogueAsset asset, System.Action onFinished = null)
     {
+        
         current = asset;
         index = 0;
         panel.SetActive(true);
+        this.onFinished = onFinished;
         Time.timeScale = 0f;
         ShowLine();
     }
@@ -69,6 +72,9 @@ public class DialogueManager : MonoBehaviour
         panel.SetActive(false);
         current = null;
         Time.timeScale = 1f;
+        var callback = onFinished;
+        onFinished = null;
+        callback?.Invoke();
     }
 
     void Update()
@@ -77,7 +83,7 @@ public class DialogueManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) Advance();
     }
 
-    void onDisable()
+    void OnDisable()
     {
         Time.timeScale = 1f;
     }

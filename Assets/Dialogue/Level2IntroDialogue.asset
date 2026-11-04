@@ -18,3 +18,7 @@ MonoBehaviour:
   - speaker: 
     text: Reboot the system using the panel at the top left! The water must still
       be channelled through the system at the top middle console!
+  - speaker: 
+    text: 'As always, the AI helper can make the level easier for you!
+
+'

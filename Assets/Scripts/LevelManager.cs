@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     [Header("Win")]
     [SerializeField] string nextSceneName;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] string mainMenuSceneName = "Main Menu";
     
     public float DifficultyMultiplier { get; private set; } = 1;
     public bool IsWon { get; private set; }
@@ -35,7 +36,7 @@ public class LevelManager : MonoBehaviour
         if (IsWon) return;
         
         progress = Mathf.Clamp01(progress + amount);
-        progressBar.value = progress;
+        if(progressBar!= null) progressBar.value = progress;
 
         if (progress >= 1f && !IsWon) WinLevel();
     }
@@ -51,9 +52,20 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(nextSceneName);
     }
 
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(mainMenuSceneName);
+    }
+
     public void SetEasyMode(bool easy)
     {
         IsEasyMode = easy;
         DifficultyMultiplier = easy ? 0.5f : 1; 
+    }
+    
+    public void CompleteLevel()
+    {
+        if(!IsWon) WinLevel();
     }
 }
