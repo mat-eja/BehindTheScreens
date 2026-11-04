@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
         current = asset;
         index = 0;
         panel.SetActive(true);
+        Time.timeScale = 0f;
         ShowLine();
     }
 
@@ -58,7 +59,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i <= total; i++)
         {
             bodyText.maxVisibleCharacters = i;
-            yield return new WaitForSeconds(1/ charsPerSecond);
+            yield return new WaitForSecondsRealtime(1/ charsPerSecond);
         }
         isTyping = false;
     }
@@ -67,12 +68,18 @@ public class DialogueManager : MonoBehaviour
     {
         panel.SetActive(false);
         current = null;
+        Time.timeScale = 1f;
     }
 
     void Update()
     {
         if (!IsOpen) return;
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) Advance();
+    }
+
+    void onDisable()
+    {
+        Time.timeScale = 1f;
     }
 }
  
