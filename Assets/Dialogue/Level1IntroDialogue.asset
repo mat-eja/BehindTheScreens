@@ -18,5 +18,5 @@ MonoBehaviour:
   - speaker: 
     text: Manage the different parts of the Data Centre to keep it running!
   - speaker: 
-    text: 'Press E to interact with the server racks and make sure the timer doesn''t
-      run out on the switch in the bottom left corner! '
+    text: 'Press E to interact with the server racks and make sure the water doesn''t
+      run out on the pump in the bottom left corner! '
