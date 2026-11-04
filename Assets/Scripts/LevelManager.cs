@@ -32,6 +32,8 @@ public class LevelManager : MonoBehaviour
 
     public void AddProgress(float amount)
     {
+        if (IsWon) return;
+        
         progress = Mathf.Clamp01(progress + amount);
         progressBar.value = progress;
 

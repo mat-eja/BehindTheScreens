@@ -119,7 +119,6 @@ public class WireMinigame : Minigame
     {
         finished = true;
         yield return new WaitForSecondsRealtime(0.5f); // let the player see the last wire
-        LevelManager.Instance.AddProgress(0.125f);
         Complete();
     }
  
