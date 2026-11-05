@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe88ea1446f639428eb628f6eae278e, type: 3}
+  m_Name: Level1IntroDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
+  lines:
+  - speaker: 
+    text: Oh no! You've been transported to a Data Centre!
+  - speaker: 
+    text: Manage the different parts of the Data Centre to keep it running!
+  - speaker: 
+    text: 'Press E to interact with the server racks and make sure the water doesn''t
+      run out on the pump in the bottom left corner! '
+  - speaker: 
+    text: 'If you struggle with maintaining the data centre, click the AI Helper
+      on the top right to make the tasks easier! '
