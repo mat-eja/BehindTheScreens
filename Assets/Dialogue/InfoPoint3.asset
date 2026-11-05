@@ -20,5 +20,7 @@ MonoBehaviour:
     text: 'Things like gas and coal aren''t sustainable and will run out eventually.
       Natural sources like solar or hydro can be much more sustainable and renewable. '
   - speaker: 
-    text: 'You can also do your part through actions like planting trees, and giving
-      back to the environment. '
+    text: You can also do simple tasks at home to reduce your energy waste.
+  - speaker: 
+    text: 'Actions like turning things off lights when you''re not using things and
+      using things less excessively can help reduce waste. '

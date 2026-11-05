@@ -14,5 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
   lines:
   - speaker: 
+    text: Oh no! Look at the state of the environment!!
+  - speaker: 
+    text: There is trash everywhere!
+  - speaker: 
+    text: And the water sources have shrunk!
+  - speaker: 
+    text: The trees are almost all gone and there are no animals anywhere.
+  - speaker: 
     text: Interact with the pollution around the environment to see the effects of
       the data centre and AI usage.

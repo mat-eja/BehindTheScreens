@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
   lines:
   - speaker: 
-    text: 'Interact with the middle of the stage
-
-'
+    text: Look at the flourishing environment!!
+  - speaker: 
+    text: 'If we keep practicing environmental sustanabilty and ethical use of AI,
+      we can help the environment grow. '
+  - speaker: 
+    text: 'Make your way to the middle of the stage and press E to finish :) '

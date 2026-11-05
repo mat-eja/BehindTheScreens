@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
   lines:
   - speaker: 
-    text: 'You can help be less wasteful by tracking how much you actually waste.
-      We can be more mindful about the waste we create. '
+    text: At home there are so many small things you can do to help the environement.
   - speaker: 
-    text: 'Actions like turning things off when you''re not using things and using
-      things less excessively can help reduce waste.  '
+    text: Like turning off the tap while brushing your teeth.
+  - speaker: 
+    text: Or growing flowers, herbs or vegetables and watch them grow. Choose native
+      plants to help local wildlife.
+  - speaker: 
+    text: And lastly if you see any trash while you're walking, make sure to pick
+      it up and put it in the bin.
+  - speaker: 
+    text: Small tasks like this can build up and help the environment!
