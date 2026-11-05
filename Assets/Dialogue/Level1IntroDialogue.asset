@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
   lines:
   - speaker: 
-    text: You've been transported to a Data Centre!
+    text: Oh no! You've been transported to a Data Centre!
   - speaker: 
     text: Manage the different parts of the Data Centre to keep it running!
   - speaker: 

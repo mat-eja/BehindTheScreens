@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
   lines:
   - speaker: 
-    text: Interact with the environment to see the effects of the data centre and
-      AI usage.
+    text: Interact with the pollution around the environment to see the effects of
+      the data centre and AI usage.
